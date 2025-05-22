@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 
-namespace DustInTheWind.HangfireDemo.Runner;
+namespace DustInTheWind.HangfireDemo.JobRunner;
 
 internal class Config
 {

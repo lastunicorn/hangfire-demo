@@ -6,6 +6,40 @@ https://www.hangfire.io/
 
 ## Overview
 
-The current repo contains an example of using the Hengfire library.
+This repo contains a simple example of using the Hengfire library.
 
-TBD
+Even if all three functionalities (enqueue jobs, execute jobs, monitor jobs) can be included in a single web application, this example contains 3 projects, one for each functionality:
+
+- **JobCreator** - created jobs
+- **Runner** - runs jobs
+- **WebDashboard** - monitor job status
+
+### a) JobCreator
+
+It is a console application that creates a job each time it is run.
+
+**Usage without arguments:**
+
+```
+DustInTheWind.HangfireDemo.JobCreator.exe
+```
+
+The job is just enqueued and stored in the database. The execution will be performed, later, by the Runner application.
+
+The enqueued job, when it run, writes a message at the Console.
+
+**Usage with arguments:**
+
+```
+DustInTheWind.HangfireDemo.JobCreator.exe queue1 queue2
+```
+
+If arguments are provided, each argument is interpreted as a queue name and the application will create a job in each queue.
+
+### b) Runner
+
+It is a console application that runs the enqueued jobs existing in the database.
+
+### c) WebDashboard
+
+It is a web application that displays the Hengfire dashboard where the user can check the stratus of the enqueued jobs.

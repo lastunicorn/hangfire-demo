@@ -1,6 +1,6 @@
 ﻿using Hangfire;
 
-namespace DustInTheWind.HangfireDemo.Runner;
+namespace DustInTheWind.HangfireDemo.JobRunner;
 
 internal class Program
 {

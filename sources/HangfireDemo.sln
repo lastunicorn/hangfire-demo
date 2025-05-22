@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireDemo.JobCreator", "HangfireDemo.JobCreator\HangfireDemo.JobCreator.csproj", "{CFBA8518-2D47-48CE-82AF-D2B3B9B67843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireDemo.Runner", "HangfireDemo.Runner\HangfireDemo.Runner.csproj", "{808968CD-1E7A-414E-A606-A5E04E1E4569}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireDemo.JobRunner", "HangfireDemo.JobRunner\HangfireDemo.JobRunner.csproj", "{808968CD-1E7A-414E-A606-A5E04E1E4569}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireDemo.WebDashboard", "HangfireDemo.WebDashboard\HangfireDemo.WebDashboard.csproj", "{33CAF59A-3C35-4B18-9EFA-723AD4C37E29}"
 EndProject
