@@ -8,14 +8,9 @@ internal class Program
     {
         Config config = new();
 
-        SetupHangfire(config);
-        RunHangfireServer(config);
-    }
+        Setup.SetupHangfire(config);
 
-    private static void SetupHangfire(Config config)
-    {
-        string connectionString = config.GetConnectionString("HangfireConnection");
-        GlobalConfiguration.Configuration.UseSqlServerStorage(connectionString);
+        RunHangfireServer(config);
     }
 
     private static void RunHangfireServer(Config config)
