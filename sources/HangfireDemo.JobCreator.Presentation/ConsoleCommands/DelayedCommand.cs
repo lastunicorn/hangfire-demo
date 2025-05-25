@@ -1,16 +1,13 @@
 ﻿using DustInTheWind.ConsoleTools.Commando;
-using DustInTheWind.HangfireDemo.JobCreator.UseCases.Recurring;
+using DustInTheWind.HangfireDemo.JobCreator.Application.UseCases.Delayed;
 using MediatR;
 
-namespace DustInTheWind.HangfireDemo.JobCreator.ConsoleCommands;
+namespace DustInTheWind.HangfireDemo.JobCreator.Presentation.ConsoleCommands;
 
-[NamedCommand("recurring", Description = "Creates a recurring job.")]
-internal class RecurringCommand : IConsoleCommand
+[NamedCommand("delayed", Description = "Create a delayed job.")]
+public class DelayedCommand : IConsoleCommand
 {
     private readonly IMediator mediator;
-
-    [NamedParameter("id", ShortName = 'i', Description = "The id of the recurring job to be created.")]
-    public string Id { get; set; }
 
     [NamedParameter("queue", ShortName = 'q', IsOptional = true, Description = "A list of queues in which to create the job.")]
     public List<string> Queues { get; set; }
@@ -18,22 +15,21 @@ internal class RecurringCommand : IConsoleCommand
     [NamedParameter("message", ShortName = 'm', IsOptional = true, Description = "The message to be displayed in the console by the job.")]
     public string Message { get; set; }
 
-    [NamedParameter("cron", ShortName = 'c', Description = "The cron expression that defines the schedule for the recurring job.")]
-    public string Cron { get; set; }
+    [NamedParameter("delay", ShortName = 'd', IsOptional = true, Description = "The delay after which the job will be executed. Default is 10 seconds.")]
+    public TimeSpan? Delay { get; set; }
 
-    public RecurringCommand(IMediator mediator)
+    public DelayedCommand(IMediator mediator)
     {
         this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
     }
 
     public async Task Execute()
     {
-        RecurringRequest request = new()
+        DelayedRequest request = new()
         {
-            JobId = Id,
             QueueNames = Queues,
             Message = Message,
-            CronExpression = Cron
+            Delay = Delay
         };
 
         await mediator.Send(request);

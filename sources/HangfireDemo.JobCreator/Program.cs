@@ -1,4 +1,6 @@
 ﻿using DustInTheWind.ConsoleTools.Commando.Setup.Autofac;
+using DustInTheWind.HangfireDemo.JobCreator.Application.UseCases.FireAndForget;
+using DustInTheWind.HangfireDemo.JobCreator.Presentation.ConsoleCommands;
 using MediatR.Extensions.Autofac.DependencyInjection;
 using MediatR.Extensions.Autofac.DependencyInjection.Builder;
 using System.Reflection;
@@ -15,13 +17,15 @@ internal class Program
         await ApplicationBuilder.Create()
             .ConfigureServices(services =>
             {
-                MediatRConfiguration mediatRConfiguration = MediatRConfigurationBuilder.Create(Assembly.GetExecutingAssembly())
+                Assembly useCaseAssembly = typeof(FireAndForgetRequest).Assembly;
+
+                MediatRConfiguration mediatRConfiguration = MediatRConfigurationBuilder.Create(useCaseAssembly)
                     .WithAllOpenGenericHandlerTypesRegistered()
                     .Build();
 
                 services.RegisterMediatR(mediatRConfiguration);
             })
-            .RegisterCommandsFromCurrentAssembly()
+            .RegisterCommandsFromAssemblyContaining(typeof(FireAndForgetCommand))
             .Build()
             .RunAsync(args);
     }

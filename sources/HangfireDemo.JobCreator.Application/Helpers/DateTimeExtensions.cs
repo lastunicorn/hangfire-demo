@@ -1,4 +1,4 @@
-﻿namespace DustInTheWind.HangfireDemo.JobCreator.Helpers;
+﻿namespace DustInTheWind.HangfireDemo.JobCreator.Application.Helpers;
 
 internal static class DateTimeExtensions
 {

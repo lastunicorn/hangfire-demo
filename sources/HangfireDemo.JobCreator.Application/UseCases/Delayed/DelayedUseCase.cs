@@ -1,8 +1,8 @@
-﻿using DustInTheWind.HangfireDemo.JobCreator.Helpers;
+﻿using DustInTheWind.HangfireDemo.JobCreator.Application.Helpers;
 using Hangfire;
 using MediatR;
 
-namespace DustInTheWind.HangfireDemo.JobCreator.UseCases.Delayed;
+namespace DustInTheWind.HangfireDemo.JobCreator.Application.UseCases.Delayed;
 
 internal class DelayedUseCase : IRequestHandler<DelayedRequest>
 {

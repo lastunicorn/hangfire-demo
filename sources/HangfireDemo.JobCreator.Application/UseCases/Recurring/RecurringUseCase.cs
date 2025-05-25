@@ -1,8 +1,8 @@
-﻿using DustInTheWind.HangfireDemo.JobCreator.Helpers;
+﻿using DustInTheWind.HangfireDemo.JobCreator.Application.Helpers;
 using Hangfire;
 using MediatR;
 
-namespace DustInTheWind.HangfireDemo.JobCreator.UseCases.Recurring;
+namespace DustInTheWind.HangfireDemo.JobCreator.Application.UseCases.Recurring;
 
 internal class RecurringUseCase : IRequestHandler<RecurringRequest>
 {

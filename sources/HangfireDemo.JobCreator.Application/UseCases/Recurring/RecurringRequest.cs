@@ -1,8 +1,8 @@
 ﻿using MediatR;
 
-namespace DustInTheWind.HangfireDemo.JobCreator.UseCases.Recurring;
+namespace DustInTheWind.HangfireDemo.JobCreator.Application.UseCases.Recurring;
 
-internal class RecurringRequest : IRequest
+public class RecurringRequest : IRequest
 {
     public string JobId { get; set; }
 

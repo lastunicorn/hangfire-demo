@@ -1,8 +1,8 @@
 ﻿using MediatR;
 
-namespace DustInTheWind.HangfireDemo.JobCreator.UseCases.Delayed;
+namespace DustInTheWind.HangfireDemo.JobCreator.Application.UseCases.Delayed;
 
-internal class DelayedRequest : IRequest
+public class DelayedRequest : IRequest
 {
     public List<string> QueueNames { get; set; }
     
