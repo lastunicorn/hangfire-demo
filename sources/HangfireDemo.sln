@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireDemo.JobRunner", "H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireDemo.WebDashboard", "HangfireDemo.WebDashboard\HangfireDemo.WebDashboard.csproj", "{33CAF59A-3C35-4B18-9EFA-723AD4C37E29}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JobCreator", "JobCreator", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JobRunner", "JobRunner", "{53FE9759-4486-4253-8F0A-3EB3A58DB781}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebDashboard", "WebDashboard", "{24D2FA7B-7C2D-411B-95BC-683A6B094C16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +36,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CFBA8518-2D47-48CE-82AF-D2B3B9B67843} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{808968CD-1E7A-414E-A606-A5E04E1E4569} = {53FE9759-4486-4253-8F0A-3EB3A58DB781}
+		{33CAF59A-3C35-4B18-9EFA-723AD4C37E29} = {24D2FA7B-7C2D-411B-95BC-683A6B094C16}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5015ECEF-97FE-4540-A864-EBC8B50D874E}

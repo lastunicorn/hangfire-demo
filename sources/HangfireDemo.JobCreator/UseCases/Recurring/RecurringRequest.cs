@@ -10,5 +10,5 @@ internal class RecurringRequest : IRequest
 
     public string Message { get; set; }
 
-    public string Cron { get; set; }
+    public string CronExpression { get; set; }
 }

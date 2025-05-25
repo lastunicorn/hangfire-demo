@@ -4,7 +4,7 @@ using MediatR;
 
 namespace DustInTheWind.HangfireDemo.JobCreator.ConsoleCommands;
 
-[NamedCommand("recurring")]
+[NamedCommand("recurring", Description = "Creates a recurring job.")]
 internal class RecurringCommand : IConsoleCommand
 {
     private readonly IMediator mediator;
@@ -33,7 +33,7 @@ internal class RecurringCommand : IConsoleCommand
             JobId = Id,
             QueueNames = Queues,
             Message = Message,
-            Cron = Cron
+            CronExpression = Cron
         };
 
         await mediator.Send(request);

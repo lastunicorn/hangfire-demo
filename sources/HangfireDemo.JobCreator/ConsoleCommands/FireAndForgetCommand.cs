@@ -4,7 +4,7 @@ using MediatR;
 
 namespace DustInTheWind.HangfireDemo.JobCreator.ConsoleCommands;
 
-[NamedCommand("fire-and-forget")]
+[NamedCommand("fire-and-forget", Description = "Creates a fire-and-forget job.")]
 internal class FireAndForgetCommand : IConsoleCommand
 {
     private readonly IMediator mediator;

@@ -4,7 +4,7 @@ using MediatR;
 
 namespace DustInTheWind.HangfireDemo.JobCreator.ConsoleCommands;
 
-[NamedCommand("delayed")]
+[NamedCommand("delayed", Description = "Create a delayed job.")]
 internal class DelayedCommand : IConsoleCommand
 {
     private readonly IMediator mediator;
