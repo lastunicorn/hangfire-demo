@@ -19,8 +19,6 @@ public class Program
             .UseRecommendedSerializerSettings()
             .UseSqlServerStorage(hangfireConnectionString));
 
-            //.UseSqlServerStorage("Data Source=localhost; Initial Catalog=HangfireDemo; User ID=icaredev; Password=icare2005; MultipleActiveResultSets=True; TrustServerCertificate=True"));
-
         WebApplication app = builder.Build();
 
         // Configure the HTTP request pipeline.

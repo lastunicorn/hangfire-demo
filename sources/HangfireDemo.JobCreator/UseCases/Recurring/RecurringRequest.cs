@@ -1,0 +1,14 @@
+﻿using MediatR;
+
+namespace DustInTheWind.HangfireDemo.JobCreator.UseCases.Recurring;
+
+internal class RecurringRequest : IRequest
+{
+    public string JobId { get; set; }
+
+    public List<string> QueueNames { get; set; }
+
+    public string Message { get; set; }
+
+    public string Cron { get; set; }
+}

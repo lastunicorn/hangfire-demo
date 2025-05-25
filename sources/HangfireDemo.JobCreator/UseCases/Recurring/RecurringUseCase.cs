@@ -1,13 +1,16 @@
 ﻿using DustInTheWind.HangfireDemo.JobCreator.Helpers;
 using Hangfire;
+using MediatR;
 
-namespace DustInTheWind.HangfireDemo.JobCreator.UseCases;
+namespace DustInTheWind.HangfireDemo.JobCreator.UseCases.Recurring;
 
-internal class RecurringUseCase
+internal class RecurringUseCase : IRequestHandler<RecurringRequest>
 {
-    public void Execute()
+    public Task Handle(RecurringRequest request, CancellationToken cancellationToken)
     {
-        EnqueuedJob("my-recurring-job", Cron.Minutely());
+        EnqueuedJob(request.JobId, request.Cron);
+
+        return Task.CompletedTask;
     }
 
     private static void EnqueuedJob(string jobId, string cron)
